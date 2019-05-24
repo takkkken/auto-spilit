@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.min.js"></script>
+    <script src="options.js"></script>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <h3>工数一括入力の設定</h3>
+    <div><input id="auto_proj" type="checkbox" checked="checked">有効</div>
+    <table>
+      <tr><td>プロジェクトコード … 例）32491</td><td>時間 … 例）1:30</td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+      <tr><td><input class="pj_code" type="text"></td><td><input class="pj_value" type="text"></td></tr>
+    </table>
+    <br>
+    <h3>勤務時間の一括入力の設定</h3>
+    <div><input id="auto_time" type="checkbox" checked="checked">有効</div>
+    <div>出社時刻<input id="start_date" type="text">例) 10:00</div>
+    <div>退社時刻<input id="end_date" type="text">例) 19:30</div>
+    <div>確定有無<input id="day_fix" type="checkbox" checked="checked"></div>
+    <br>
+    <input id="save" type="button" value="保存">
+    <br>
+    ※設定変更時は、TeamSpiritの勤務画面をリロードするか新たに開き直して下さい。
+  </body>
+</html>

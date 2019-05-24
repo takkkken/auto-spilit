@@ -1,0 +1,42 @@
+{
+  "name": "auto spirit",
+  "version": "0.3",
+  "manifest_version": 2,
+
+  "description": "TermSpiritの時間入力を一括で行います",
+
+  "permissions" : [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "storage",
+    "webNavigation"
+  ],
+
+  "icons" : {
+    "48" : "auto-spirit48.png"
+  },
+
+  "background" : {
+    "scripts" : ["jquery.min.js","background.js"]
+  },
+
+  "browser_action" : {
+    "default_icon" : "auto-spirit.png"
+    ,"default_title" : "browser action sample"
+  },
+
+  "content_scripts": [
+    {
+        "js": ["jquery.min.js","contentscript.js"],
+        "matches": ["https://teamspirit-1608--teamspirit.ap5.visual.force.com/*/*"]
+    }
+  ],
+
+  "options_ui": {
+    "page": "options.html"
+  }
+
+
+}
