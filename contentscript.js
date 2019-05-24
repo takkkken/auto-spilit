@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener(e => {
         return false;
     }
 
-    if(window.confirm('今月の勤務の一括登録を行います。よろしいですか？')) {
+    if(window.confirm('今月の勤務の一括登録を行います。再実行時は上書きされます。日次確定済みの日はスキップします。★場合によっては３分位かかります　★実行中はPCの操作をお控え下さい。本当によろしいですか？')) {
     }else{
         $(".dval.vst.day_time0")[0].parentNode.querySelector('.vjob').click();
         
@@ -88,7 +88,7 @@ chrome.runtime.onMessage.addListener(e => {
                         break;
                     //PJコードが複数マッチしたら
                     if($('.name:contains("'+pjCode+'")').length > 1){
-                        alert("対象のPJコードが複数マッチしました。オプション設定でPJコードを、例えば「32601ａｕユニット開発／その他準備作業」のようにフルで入力して下さい。");
+                        alert("対象のPJコードが複数マッチしました。オプション設定でPJコードを、例えば「32601ユニット開発／その他準備作業」のようにフルで入力して下さい。");
                         return false;
                     }
                     //工数を入力
@@ -129,9 +129,15 @@ chrome.runtime.onMessage.addListener(e => {
             //出社時刻自動入力
             //  ダイアログ開いて時刻をセット
             $("#"+idname[g_cnt]).click();
-            $('#startTime').val($options.start_date);
-            $('#endTime').val($options.end_date);
-            //日次確定をチェックする
+            //  開始時間が空白時は何もしない
+            if($options.start_date!=""){
+                $('#startTime').val($options.start_date);
+            }
+            //  終了時間が空白時は何もしない
+            if($options.end_date!=""){
+                $('#endTime').val($options.end_date);
+            }
+            //  日次確定をチェックする
             if($options.day_fix==true){
                 $("#timeInputDayFix").prop("checked",true);
             }

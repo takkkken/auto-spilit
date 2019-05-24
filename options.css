@@ -10,3 +10,6 @@ body {
   width: 100px;
 }
 
+#auto_proj, #auto_time {
+  transform: scale(1.5);
+}
